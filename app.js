@@ -41,21 +41,55 @@
     });
   });
 
-  /* celular com o perfil */
+  /* celular com o perfil do Instagram (modo escuro, como no app) */
+  var PERFIS = window.PERFIS || {};
+  var IC = {
+    voltar: '<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    sino: '<svg viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 0 1 12 0v6l1.5 2h-15L6 17Zm4 3.5a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+    mais: '<svg viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></g></svg>',
+    seta: '<svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    corrente: '<svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.2 1.2M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.2-1.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    grade: '<svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+    reels: '<svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 8.5h18M8 3l3 5.5M14 3l3 5.5"/><path d="M10 12v5l4.5-2.5L10 12Z"/></g></svg>',
+    repost: '<svg viewBox="0 0 24 24"><path d="M5 10V8a3 3 0 0 1 3-3h10l-3-3M19 14v2a3 3 0 0 1-3 3H6l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    marcado: '<svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19c1.2-2.6 3.1-4 5.5-4s4.3 1.4 5.5 4"/></g></svg>',
+    carrossel: '<svg viewBox="0 0 24 24"><path d="M7 4h11a2 2 0 0 1 2 2v11" fill="none" stroke="#fff" stroke-width="2"/><rect x="3.5" y="7.5" width="13" height="13" rx="2" fill="#fff"/></svg>',
+    casa: '<svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>',
+    enviar: '<svg viewBox="0 0 24 24"><path d="M21 3 3 10.5l7 2.5 2.5 7L21 3Zm-11 10 5-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>',
+    busca: '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    status: '<svg viewBox="0 0 64 20"><g fill="currentColor"><rect x="0" y="12" width="3.4" height="6" rx="1"/><rect x="5" y="9" width="3.4" height="9" rx="1"/><rect x="10" y="6" width="3.4" height="12" rx="1"/><rect x="15" y="3" width="3.4" height="15" rx="1" opacity=".35"/><path d="M29 7.5a10 10 0 0 1 13 0l-1.6 1.7a7.6 7.6 0 0 0-9.8 0L29 7.5Zm3.2 3.4a5.4 5.4 0 0 1 6.6 0l-3.3 3.6-3.3-3.6Z"/><rect x="47" y="4" width="15" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="49" y="6" width="9" height="7" rx="1.6"/></g></svg>'
+  };
   $$(".cel").forEach(function (cel) {
+    var p = PERFIS[cel.dataset.perfil] || {};
     var lista = doGrupo(cel.dataset.grupo).slice(0, 9);
     if (!lista.length) return;
-    var grade = lista.map(function (o) { return '<img src="img/t/' + o.id + '.jpg" loading="lazy" decoding="async" alt="">'; }).join("");
+    var nums = (p.nums || []).map(function (n) { return "<div><b>" + esc(n[0]) + "</b><span>" + esc(n[1]) + "</span></div>"; }).join("");
+    var bio = (p.cat ? '<p class="ig-cat">' + esc(p.cat) + "</p>" : "") +
+      (p.bio || []).map(function (l) { return "<p>" + esc(l) + "</p>"; }).join("") +
+      (p.link ? '<p class="ig-link">' + IC.corrente + esc(p.link) + "</p>" : "");
+    var dest = (p.destaques || []).map(function (d) {
+      var dentro = d.img ? '<img src="' + d.img + '" alt="" loading="lazy">' :
+        '<i style="background:' + (p.corDestaque || "#555") + '">' + (d.txt ? "<em>" + esc(d.txt) + "</em>" : "") + "</i>";
+      return '<div class="ig-dest"><span>' + dentro + "</span><small>" + esc(d.t) + "</small></div>";
+    }).join("");
+    var grade = lista.map(function (o) {
+      return '<span><img src="img/t/' + o.id + '.jpg" loading="lazy" decoding="async" alt="">' + IC.carrossel + "</span>";
+    }).join("");
     cel.setAttribute("role", "img");
-    cel.setAttribute("aria-label", "Perfil @" + cel.dataset.user + " no celular, com as artes do feed");
+    cel.setAttribute("aria-label", "Perfil " + (p.nome || "") + " no Instagram, com as artes do feed");
     cel.innerHTML =
       '<div class="cel-tela"><span class="cel-ilha"></span>' +
-      '<div class="cel-status"><span>9:41</span><span>●●●</span></div>' +
-      '<div class="cel-user">' + esc(cel.dataset.user) + "</div>" +
-      '<div class="cel-perfil"><img src="img/t/' + lista[0].id + '.jpg" alt=""><div><b>' + esc(cel.dataset.nome) +
-      "</b><span>feed criado por Pedro Munareto</span></div></div>" +
-      '<div class="cel-bts"><span>Seguindo</span><span>Mensagem</span></div>' +
-      '<div class="cel-grade">' + grade + "</div></div>";
+      '<div class="ig-status"><b>9:41</b>' + IC.status + "</div>" +
+      '<div class="ig-barra">' + IC.voltar + "<b>" + esc(p.user || "") + "</b>" + IC.sino + IC.mais + "</div>" +
+      '<div class="ig-cab"><img class="ig-foto" src="' + (p.foto || "") + '" alt=""><div class="ig-info"><b class="ig-nome">' + esc(p.nome || "") + "</b>" +
+      (nums ? '<div class="ig-nums">' + nums + "</div>" : "") + "</div></div>" +
+      '<div class="ig-bio">' + bio + "</div>" +
+      '<div class="ig-bts"><span>Seguindo' + IC.seta + "</span><span>Mensagem</span><span>Contato</span></div>" +
+      (dest ? '<div class="ig-dests">' + dest + "</div>" : "") +
+      '<div class="ig-abas"><span class="on">' + IC.grade + "</span><span>" + IC.reels + "</span><span>" + IC.repost + "</span><span>" + IC.marcado + "</span></div>" +
+      '<div class="ig-grade">' + grade + "</div>" +
+      '<div class="ig-nav">' + IC.casa + IC.reels + IC.enviar + IC.busca + '<img src="' + (p.foto || "") + '" alt=""></div>' +
+      "</div>";
   });
 
   /* carrosseis completos */
@@ -76,7 +110,8 @@
   /* prints de resultado */
   $$("[data-zoom]").forEach(function (b) {
     b.addEventListener("click", function () {
-      abrir([{ src: b.dataset.zoom, titulo: b.dataset.leg, cliente: "Pousada das Missões", ano: 2026, tipo: "Print de resultado" }], 0);
+      abrir([{ src: b.dataset.zoom, titulo: b.dataset.leg, cliente: b.dataset.cli || "Pousada das Missões",
+        ano: b.dataset.ano || 2026, tipo: b.dataset.tipo || "Print de resultado" }], 0);
     });
   });
 
@@ -160,7 +195,7 @@
     var links = {};
     $$("a", menu).forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
     var secs = { sobre: "sobre", projetos: "projetos", pousada: "projetos", fasa: "projetos", tabua: "projetos", eco: "projetos",
-      anima: "projetos", resultados: "resultados", sites: "sites", processo: "sites", contato: "contato" };
+      escopo: "projetos", anima: "projetos", resultados: "resultados", sites: "sites", processo: "sites", contato: "contato" };
     var obsSec = new IntersectionObserver(function (ents) {
       ents.forEach(function (en) {
         if (!en.isIntersecting) return;

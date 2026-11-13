@@ -154,18 +154,18 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "fasa-vem-ser",
-  "titulo": "Vem ser FASA",
+  "id": "fasa-formando",
+  "titulo": "Você a um passo de realizar o seu sonho",
   "cliente": "FASA",
   "grupo": "fasa",
   "ano": 2024,
   "tipo": "Campanha de vestibular",
-  "w": 619,
+  "w": 880,
   "h": 1100
  },
  {
-  "id": "fasa-enter",
-  "titulo": "Você a um passo",
+  "id": "fasa-vem-ser",
+  "titulo": "Vem ser FASA",
   "cliente": "FASA",
   "grupo": "fasa",
   "ano": 2024,
@@ -224,14 +224,14 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "fasa-startup",
-  "titulo": "A primeira faculdade startup do Brasil",
+  "id": "fasa-enter",
+  "titulo": "Você a um passo",
   "cliente": "FASA",
   "grupo": "fasa",
   "ano": 2024,
-  "tipo": "Post",
-  "w": 1080,
-  "h": 1080
+  "tipo": "Campanha de vestibular",
+  "w": 619,
+  "h": 1100
  },
  {
   "id": "fasa-cracha",
@@ -372,6 +372,16 @@ window.OBRAS = [
   "tipo": "Post de agenda",
   "w": 880,
   "h": 1100
+ },
+ {
+  "id": "escopo-crescer",
+  "titulo": "Seu time precisa crescer?",
+  "cliente": "Escopo Soluções",
+  "grupo": "escopo",
+  "ano": 2024,
+  "tipo": "Post",
+  "w": 880,
+  "h": 1100
  }
 ];
 
@@ -402,3 +412,118 @@ window.PANORAMAS = [
   "h": 750
  }
 ];
+
+/* Perfil de cada cliente no celular (numeros e bio copiados do Instagram de cada um, 13/11/2026) */
+window.PERFIS = {
+ "pousada": {
+  "user": "pousadadasmissoes",
+  "nome": "POUSADA DAS MISSÕES",
+  "foto": "img/perfil/pousada.png",
+  "nums": [
+   [
+    "1.237",
+    "posts"
+   ],
+   [
+    "19,4 mil",
+    "seguidores"
+   ],
+   [
+    "7.710",
+    "seguindo"
+   ]
+  ],
+  "bio": [
+   "Ao lado do único Patrimônio Mundial do sul do Brasil 🏛️",
+   "Pousada Temática Jesuítico-Guarani",
+   "📍São Miguel das Missões, RS",
+   "👇Faça sua reserva aqui."
+  ],
+  "link": "wa.me/555533811202",
+  "destaques": [
+   {
+    "t": "ESTRUTURA",
+    "txt": "NOSSA ESTRUTURA"
+   },
+   {
+    "t": "Hóspedes"
+   },
+   {
+    "t": "POUSADA"
+   },
+   {
+    "t": "CAFÉ DA MAN..."
+   }
+  ],
+  "corDestaque": "#C98B3F"
+ },
+ "tabua": {
+  "user": "tabuagaucha",
+  "nome": "Tábua Gaúcha | Produtos em Madeira nobre sob medida |",
+  "cat": "Empreendedor",
+  "foto": "img/perfil/tabua.png",
+  "nums": [
+   [
+    "350",
+    "posts"
+   ],
+   [
+    "7.295",
+    "seguidores"
+   ],
+   [
+    "1.067",
+    "seguindo"
+   ]
+  ],
+  "bio": [
+   "Mesas de centro, Tábuas e acessórios para churrasco, Lareiras ecológicas sob medida (personalizadas)",
+   "Madeira nobre"
+  ],
+  "destaques": [
+   {
+    "t": "Dia a dia",
+    "img": "img/t/tabua-churrasco.jpg"
+   },
+   {
+    "t": "Clientes",
+    "img": "img/perfil/tabua.png"
+   },
+   {
+    "t": "Lareira Ecolog",
+    "img": "img/perfil/tabua.png"
+   },
+   {
+    "t": "Mesas de cen...",
+    "img": "img/perfil/tabua.png"
+   }
+  ]
+ },
+ "fasa": {
+  "user": "FASA",
+  "nome": "Faculdade Santo Ângelo",
+  "foto": "img/perfil/fasa.png",
+  "bio": [
+   "Vestibular 2025 com 50% de bolsa pra todos",
+   "A primeira faculdade startup do Brasil"
+  ],
+  "destaques": [
+   {
+    "t": "Vestibular",
+    "img": "img/t/fasa-formando.jpg"
+   },
+   {
+    "t": "Summit",
+    "img": "img/t/fasa-summit.jpg"
+   },
+   {
+    "t": "Escolas",
+    "img": "img/t/fasa-escola.jpg"
+   },
+   {
+    "t": "Agronomia",
+    "img": "img/t/fasa-agro.jpg"
+   }
+  ]
+ }
+};

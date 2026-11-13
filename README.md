@@ -1,6 +1,6 @@
 # Portfólio principal · Pedro Munareto
 
-Portfólio de social media, tráfego pago e landing pages.
+Portfólio de social media, tráfego pago e sites.
 
 Site no ar: https://pedronicolasmm-coder.github.io/portfolio-principal/
 
@@ -30,7 +30,8 @@ Para ver no computador antes de subir, basta abrir o `index.html` no navegador.
 | Arquivo | O que tem |
 |---|---|
 | `index.html` | Todos os textos: abertura (mesa com as pastas), sobre mim, projetos, resultados, sites e contato |
-| `dados.js` | Artes de cada projeto (grupos `pousada`, `fasa`, `tabua`, `eco`) e os carrosséis completos |
+| `img/perfil/` | Fotos de perfil que aparecem no Instagram dentro do celular |
+| `dados.js` | Artes de cada projeto (grupos `pousada`, `fasa`, `tabua`, `eco`, `escopo`), os carrosséis completos e, em `PERFIS`, os números e a bio do Instagram de cada cliente |
 | `estilo.css` | Visual. As cores ficam no topo, em `:root` |
 | `app.js` | Monta o feed 3x3, a grade, o celular de cada projeto e o visualizador |
 | `img/t/` | Miniaturas das artes (cerca de 640 px) |
@@ -58,10 +59,15 @@ seção "Sobre mim" no `index.html`.
 
 ## Depois de mudar o visual ou o funcionamento
 
-No `index.html`, `estilo.css`, `dados.js` e `app.js` são carregados com `?v=3` no fim.
-Sempre que mudar um desses arquivos, aumente esse número (`?v=4`, `?v=5`...). Senão o
+No `index.html`, `estilo.css`, `dados.js` e `app.js` são carregados com `?v=4` no fim.
+Sempre que mudar um desses arquivos, aumente esse número (`?v=5`, `?v=6`...). Senão o
 navegador de quem já visitou o site pode continuar mostrando a versão antiga.
 
 ## Observação
 
 As marcas mostradas pertencem aos clientes e aparecem aqui para fins de portfólio.
+
+## Números do Instagram no celular
+
+Os seguidores e posts mostrados no celular de cada projeto ficam em `window.PERFIS`, no fim do `dados.js`.
+Foram copiados dos perfis em 13/11/2026. Para atualizar, troque os números lá.
