@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=4">
+<link rel="stylesheet" href="estilo.css?v=5">
 <script>
 document.documentElement.classList.add("js");
 /* sempre abre no topo: o navegador nao volta para onde parou nem pula para um #link */
@@ -297,19 +297,12 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
     </div>
   </div>
   <div class="env">
-    <div class="formatos revela">
-      <div class="formatos-txt">
-        <p class="script formatos-script">uma peça, dois formatos</p>
-        <p>A campanha do Vestibular 2025 feita para o feed e para os stories: a mesma foto, o mesmo selo de 50% de bolsa e o texto reorganizado para cada tela.</p>
+    <div class="campanha revela">
+      <div class="camp-cab">
+        <p class="script camp-script">campanha vestibular 2025</p>
+        <p>“Você a um passo…”: a mesma ideia em feed, post quadrado e stories, com formandos de cursos diferentes. O papel rasgado, o letreiro de recortes e o selo de 50% de bolsa amarram todas as peças.</p>
       </div>
-      <button class="fmt" type="button" data-zoom="img/obras/fasa-formando.jpg" data-leg="Você a um passo de realizar o seu sonho · feed" data-cli="FASA" data-ano="2024" data-tipo="Campanha de vestibular">
-        <img src="img/t/fasa-formando.jpg" width="640" height="800" loading="lazy" alt="Arte da FASA para o feed: Você a um passo de realizar o seu sonho, com formando e selo de 50% de bolsa.">
-        <span>feed · 4:5</span>
-      </button>
-      <button class="fmt fmt-story" type="button" data-zoom="img/obras/fasa-formando-story.jpg" data-leg="Você a um passo de realizar o seu sonho · stories" data-cli="FASA" data-ano="2024" data-tipo="Campanha de vestibular">
-        <img src="img/t/fasa-formando-story.jpg" width="450" height="800" loading="lazy" alt="A mesma arte da FASA adaptada para os stories, na vertical.">
-        <span>stories · 9:16</span>
-      </button>
+      <div class="camp-linhas" id="campanha"></div>
     </div>
   </div>
   <div class="env"><div class="grade revela" data-grupo="fasa"></div></div>
@@ -550,7 +543,7 @@ if (location.hash) history.replaceState(null, "", location.pathname + location.s
   <button class="lupa-seta prox" id="lupa-prox" type="button" aria-label="Próximo">&#8250;</button>
 </div>
 
-<script src="dados.js?v=4"></script>
-<script src="app.js?v=4"></script>
+<script src="dados.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

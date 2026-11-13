@@ -295,17 +295,24 @@ img.foto-pedro{filter:grayscale(1) contrast(1.05)}
 .ig-nav svg{width:6.6cqw;height:6.6cqw}
 .ig-nav img{width:7.4cqw;height:7.4cqw;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 .5cqw #F5F5F5}
 
-/* FASA: uma peca, dois formatos */
-.formatos{display:grid;gap:22px;align-items:end;margin-top:clamp(48px,6vw,80px);padding:clamp(20px,3vw,36px);border:2px solid var(--marrom);
-  border-radius:24px;background:var(--papel)}
-@media(min-width:900px){.formatos{grid-template-columns:1fr minmax(0,300px) minmax(0,190px);gap:32px}}
-.formatos-script{margin:0 0 10px;font-size:clamp(38px,4vw,54px);line-height:1;color:var(--marrom)}
-.formatos-txt p:not(.script){margin:0;max-width:44ch;font-size:16.5px;line-height:1.65;color:var(--texto)}
-.fmt{display:flex;flex-direction:column;gap:10px;padding:0;border:0;background:none;cursor:zoom-in;text-align:left}
-.fmt img{width:100%;border-radius:10px;box-shadow:0 20px 40px rgba(58,35,24,.2);transition:transform .3s}
-@media(hover:hover){.fmt:hover img{transform:translateY(-4px)}}
-.fmt span{font-size:13px;font-weight:600;color:var(--cinza)}
-@media(max-width:899px){.formatos{grid-template-columns:1fr 1fr}.formatos-txt{grid-column:1 / -1}.fmt-story{width:72%;justify-self:center}}
+/* FASA: campanha em varios formatos */
+.campanha{margin-top:clamp(48px,6vw,80px);padding:clamp(18px,2.6vw,32px);border:2px solid var(--marrom);border-radius:24px;background:var(--papel)}
+.camp-cab{display:grid;gap:8px 40px;align-items:end;margin-bottom:22px}
+@media(min-width:900px){.camp-cab{grid-template-columns:auto 1fr}}
+.camp-script{margin:0;font-size:clamp(38px,4.4vw,58px);line-height:1;color:var(--marrom)}
+.camp-cab p:not(.script){margin:0;max-width:62ch;font-size:16px;line-height:1.6;color:var(--texto)}
+.camp-linha{display:flex;gap:12px}
+.camp-linha + .camp-linha{margin-top:12px}
+.camp-item{position:relative;flex:var(--r) 1 0;min-width:0;aspect-ratio:var(--r);padding:0;border:0;border-radius:10px;overflow:hidden;
+  background:var(--creme2);cursor:zoom-in;box-shadow:0 14px 30px rgba(58,35,24,.14)}
+.camp-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+@media(hover:hover){.camp-item:hover img{transform:scale(1.04)}}
+.camp-item span{position:absolute;left:8px;bottom:8px;padding:3px 9px;border-radius:999px;background:rgba(58,35,24,.82);color:var(--creme);
+  font-size:11.5px;font-weight:600}
+@media(max-width:700px){
+  .camp-linha{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin}
+  .camp-item{flex:0 0 auto;height:300px;scroll-snap-align:start}
+}
 
 /* projeto mini (Escopo) */
 .proj-mini{padding-top:clamp(32px,4vw,56px)}

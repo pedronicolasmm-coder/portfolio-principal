@@ -31,6 +31,27 @@
     lista.forEach(function (o, i) { caixa.appendChild(botao(o, lista, i, i >= cabe3 ? "so-desk" : "")); });
   });
 
+  /* campanha da FASA: linhas com feed, quadrado e stories na mesma altura */
+  var caixaCamp = $("#campanha");
+  if (caixaCamp && window.CAMPANHA) {
+    var porIdC = {}; OBRAS.forEach(function (o) { porIdC[o.id] = o; });
+    var todasC = [];
+    window.CAMPANHA.forEach(function (linha) { linha.forEach(function (id) { if (porIdC[id]) todasC.push(porIdC[id]); }); });
+    window.CAMPANHA.forEach(function (linha) {
+      var div = document.createElement("div");
+      div.className = "camp-linha";
+      linha.forEach(function (id) {
+        var o = porIdC[id]; if (!o) return;
+        var r = o.w / o.h, fmt = r > .95 ? "quadrado" : (r < .7 ? "stories" : "feed");
+        var b = botao(o, todasC, todasC.indexOf(o), "camp-item");
+        b.style.setProperty("--r", r.toFixed(4));
+        b.insertAdjacentHTML("beforeend", "<span>" + fmt + "</span>");
+        div.appendChild(b);
+      });
+      caixaCamp.appendChild(div);
+    });
+  }
+
   /* duas artes soltas (Eco do Pampa) */
   $$(".eco-artes").forEach(function (caixa) {
     var lista = doGrupo(caixa.dataset.grupo);

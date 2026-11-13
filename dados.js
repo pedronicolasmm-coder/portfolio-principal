@@ -154,6 +154,26 @@ window.OBRAS = [
   "h": 1100
  },
  {
+  "id": "fasa-formandos",
+  "titulo": "Você a um passo · formandos",
+  "cliente": "FASA",
+  "grupo": "fasa",
+  "ano": 2024,
+  "tipo": "Post de feed",
+  "w": 1080,
+  "h": 1350
+ },
+ {
+  "id": "fasa-cursos",
+  "titulo": "Você a um passo · vários cursos",
+  "cliente": "FASA",
+  "grupo": "fasa",
+  "ano": 2024,
+  "tipo": "Post de feed",
+  "w": 1080,
+  "h": 1350
+ },
+ {
   "id": "fasa-formando",
   "titulo": "Você a um passo de realizar o seu sonho",
   "cliente": "FASA",
@@ -216,26 +236,6 @@ window.OBRAS = [
  {
   "id": "fasa-faltam",
   "titulo": "Faltam 5 dias",
-  "cliente": "FASA Summit",
-  "grupo": "fasa",
-  "ano": 2024,
-  "tipo": "Evento",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "fasa-enter",
-  "titulo": "Você a um passo",
-  "cliente": "FASA",
-  "grupo": "fasa",
-  "ano": 2024,
-  "tipo": "Campanha de vestibular",
-  "w": 619,
-  "h": 1100
- },
- {
-  "id": "fasa-cracha",
-  "titulo": "Organização confirmada",
   "cliente": "FASA Summit",
   "grupo": "fasa",
   "ano": 2024,
@@ -382,6 +382,56 @@ window.OBRAS = [
   "tipo": "Post",
   "w": 880,
   "h": 1100
+ },
+ {
+  "id": "fasa-cursos-story",
+  "titulo": "Você a um passo · vários cursos",
+  "cliente": "FASA",
+  "grupo": "campanha",
+  "ano": 2024,
+  "tipo": "Stories",
+  "w": 787,
+  "h": 1400
+ },
+ {
+  "id": "fasa-medicina",
+  "titulo": "Você a um passo · Medicina",
+  "cliente": "FASA",
+  "grupo": "campanha",
+  "ano": 2024,
+  "tipo": "Post quadrado",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "id": "fasa-conquista",
+  "titulo": "Você a um passo · conquista",
+  "cliente": "FASA",
+  "grupo": "campanha",
+  "ano": 2024,
+  "tipo": "Post quadrado",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "id": "fasa-aponta-story",
+  "titulo": "Você a um passo · é com você",
+  "cliente": "FASA",
+  "grupo": "campanha",
+  "ano": 2024,
+  "tipo": "Stories",
+  "w": 787,
+  "h": 1400
+ },
+ {
+  "id": "fasa-formando-story",
+  "titulo": "Você a um passo de realizar o seu sonho",
+  "cliente": "FASA",
+  "grupo": "campanha",
+  "ano": 2024,
+  "tipo": "Stories",
+  "w": 787,
+  "h": 1400
  }
 ];
 
@@ -412,6 +462,9 @@ window.PANORAMAS = [
   "h": 750
  }
 ];
+
+/* Campanha Vestibular 2025 da FASA: cada lista e uma linha do bloco (feed, quadrado e stories) */
+window.CAMPANHA = [["fasa-cursos-story", "fasa-cursos", "fasa-medicina", "fasa-formandos"], ["fasa-conquista", "fasa-aponta-story", "fasa-formando", "fasa-formando-story"]];
 
 /* Perfil de cada cliente no celular (numeros e bio copiados do Instagram de cada um, 13/11/2026) */
 window.PERFIS = {
@@ -510,7 +563,7 @@ window.PERFIS = {
   "destaques": [
    {
     "t": "Vestibular",
-    "img": "img/t/fasa-formando.jpg"
+    "img": "img/t/fasa-cursos.jpg"
    },
    {
     "t": "Summit",
