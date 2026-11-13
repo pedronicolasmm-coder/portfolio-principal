@@ -134,6 +134,16 @@
     x0 = null;
   });
 
+  /* ---------- sempre abre no topo ---------- */
+  var mexeu = false;
+  ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (ev) {
+    window.addEventListener(ev, function () { mexeu = true; }, { once: true, passive: true });
+  });
+  function topo0() { if (!mexeu) window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }
+  topo0();
+  window.addEventListener("load", topo0);
+  window.addEventListener("pageshow", function (e) { if (e.persisted) { mexeu = false; topo0(); } });
+
   /* ---------- menu e topo ---------- */
   var menu = $("#menu"), hamb = $("#hamb"), topo = $("#topo");
   hamb.addEventListener("click", function () {
@@ -162,7 +172,7 @@
         Object.keys(links).forEach(function (k) { links[k].classList.toggle("ativo", k === en.target.id); });
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    ["inicio", "servicos", "resultados", "trajetoria", "trabalhos", "sites", "formacao", "processo", "contato"].forEach(function (id) {
+    ["inicio", "servicos", "resultados", "trajetoria", "trabalhos", "sites", "sobre", "formacao", "processo", "contato"].forEach(function (id) {
       var s = document.getElementById(id); if (s) obsSec.observe(s);
     });
   } else {

@@ -29,7 +29,7 @@ Para ver no computador antes de subir, basta abrir o `index.html` no navegador.
 
 | Arquivo | O que tem |
 |---|---|
-| `index.html` | Todos os textos: abertura, serviços, resultados, trajetória, sites, formação e contato |
+| `index.html` | Todos os textos: abertura, serviços, resultados, trajetória, sites, sobre mim, formação e contato |
 | `dados.js` | Lista dos trabalhos da galeria (título, cliente, ano, tipo) e dos carrosséis completos |
 | `estilo.css` | Visual. As cores ficam no topo, em `:root` |
 | `app.js` | Funcionamento: galeria, filtros, visualizador, menu do celular |
@@ -42,13 +42,18 @@ Para ver no computador antes de subir, basta abrir o `index.html` no navegador.
 
 1. Salve a arte em JPG duas vezes, com o mesmo nome: uma pequena em `img/t/` e uma grande em `img/obras/`.
 2. Em `dados.js`, copie um bloco de trabalho e troque `id` (o nome do arquivo, sem `.jpg`), `titulo`, `cliente`, `ano` e `tipo`.
-3. O `grupo` define o filtro: `pousada`, `fasa`, `tabua`, `mitra` ou `outros`.
+3. O `grupo` define o filtro: `pousada`, `fasa`, `tabua` ou `outros`.
 4. A ordem dos blocos é a ordem da galeria. Os 16 primeiros aparecem antes do botão "Ver todos".
+
+## Foto na seção Sobre mim
+
+Salve a foto como `img/pedro.jpg` (vertical, 4:5) e siga o comentário que está logo acima da
+seção "Sobre mim" no `index.html`.
 
 ## Depois de mudar o visual ou o funcionamento
 
-No `index.html`, `estilo.css`, `dados.js` e `app.js` são carregados com `?v=1` no fim.
-Sempre que mudar um desses arquivos, aumente esse número (`?v=2`, `?v=3`...). Senão o
+No `index.html`, `estilo.css`, `dados.js` e `app.js` são carregados com `?v=2` no fim.
+Sempre que mudar um desses arquivos, aumente esse número (`?v=3`, `?v=4`...). Senão o
 navegador de quem já visitou o site pode continuar mostrando a versão antiga.
 
 ## Observação

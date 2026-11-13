@@ -63,16 +63,17 @@ button{font:inherit;color:inherit}
   background:var(--laranja);border:2px solid var(--papel)}
 .marca-txt{display:flex;flex-direction:column;line-height:1.15}
 .marca-txt b{font:700 16px/1.1 var(--tit);letter-spacing:-.01em}
-.marca-txt small{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--cinza);margin-top:3px}
+.marca-txt small{white-space:nowrap;font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--cinza);margin-top:3px}
 .menu{display:flex;gap:26px;margin-left:auto}
-.menu a{font-size:15px;font-weight:500;text-decoration:none;color:#3A3835;padding:6px 0;position:relative}
+@media(max-width:1240px){.menu{gap:20px}}
+.menu a{white-space:nowrap;font-size:15px;font-weight:500;text-decoration:none;color:#3A3835;padding:6px 0;position:relative}
 .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--laranja);transition:right .22s}
 .menu a.ativo,.menu a:hover{color:var(--tinta)}
 .menu a.ativo::after{right:0}
 @media(hover:hover){.menu a:hover::after{right:0}}
 .bt-topo{height:44px;padding:0 18px;font-size:14.5px}
 .hamb{display:none}
-@media(max-width:960px){
+@media(max-width:1100px){
   .menu{position:fixed;top:var(--topo);left:0;right:0;flex-direction:column;gap:0;margin:0;padding:8px 18px 18px;
     background:var(--papel);border-bottom:1px solid var(--linha);box-shadow:0 18px 30px rgba(14,14,16,.08);
     transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s}
@@ -209,8 +210,8 @@ h2{margin:0;font:800 clamp(36px,5vw,64px)/1.02 var(--tit);letter-spacing:-.04em}
 .nav-bar i:first-child{background:#FF5F57}.nav-bar i:nth-child(2){background:#FEBC2E}.nav-bar i:nth-child(3){background:#28C840}
 .nav-bar span{margin-left:10px;font-family:var(--mono);font-size:11px;color:#6B6862;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sub-meio{margin-top:8px}
-.feed{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:72px}
-@media(max-width:1000px){.feed{grid-template-columns:repeat(3,1fr)}}
+.feed{display:grid;grid-template-columns:repeat(3,minmax(0,250px));gap:14px;margin-bottom:72px}
+@media(max-width:600px){.feed{grid-template-columns:repeat(3,1fr);gap:10px}}
 .feed figure{margin:0}
 .feed img{border-radius:10px;width:100%;aspect-ratio:4/5;object-fit:cover}
 .feed figcaption{margin-top:10px;font-size:13.5px;color:var(--cinza-esc)}
@@ -278,6 +279,29 @@ h2{margin:0;font:800 clamp(36px,5vw,64px)/1.02 var(--tit);letter-spacing:-.04em}
 .site-txt > p:not(.mono){margin:0 0 16px;color:var(--cinza);font-size:16px;line-height:1.65;max-width:52ch}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;list-style:none}
 .tags li{padding:5px 10px;border-radius:6px;background:var(--papel2);font-family:var(--mono);font-size:11.5px;color:#3A3835}
+
+/* sobre mim */
+.sobre{display:grid;gap:44px;align-items:center}
+@media(min-width:900px){.sobre{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px}}
+.foto-pedro{position:relative;display:grid;place-items:center;width:100%;max-width:440px;aspect-ratio:4/5;
+  border-radius:20px;overflow:hidden;object-fit:cover;box-shadow:0 30px 60px rgba(14,14,16,.18);
+  background:radial-gradient(110% 70% at 90% 0%,rgba(232,89,12,.45),transparent 60%),var(--tinta)}
+.foto-pedro::before{content:"";position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(var(--linha-esc) 1px,transparent 1px),linear-gradient(90deg,var(--linha-esc) 1px,transparent 1px);
+  background-size:44px 44px;-webkit-mask-image:linear-gradient(#000,transparent 80%);mask-image:linear-gradient(#000,transparent 80%)}
+.fp-pm{position:relative;font:800 clamp(110px,13vw,170px)/1 var(--tit);letter-spacing:-.05em;color:#fff}
+.fp-pm::after{content:"";position:absolute;top:.04em;right:-.2em;width:.2em;height:.2em;border-radius:50%;background:var(--laranja)}
+.fp-local{position:absolute;left:22px;bottom:20px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--cinza-esc)}
+@media(max-width:899px){.foto-pedro{max-width:320px}}
+.sobre-txt h2{margin-bottom:8px}
+.sobre-txt p:not(.rotulo):not(.sobre-forte){margin:18px 0 0;font-size:17.5px;line-height:1.7;color:#3A3835;max-width:60ch}
+.sobre-txt p b{color:var(--tinta)}
+.sobre-forte{margin:26px 0 0;padding:16px 20px;max-width:52ch;border-radius:12px;border-left:4px solid var(--laranja);
+  background:var(--tinta);color:#fff;font:700 18px/1.45 var(--tit);letter-spacing:-.01em}
+.sobre-lista{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0;padding:0;list-style:none}
+.sobre-lista li{padding:7px 13px;border-radius:999px;background:var(--branco);border:1px solid var(--linha);
+  font-size:14px;font-weight:600;color:#2A2926}
 
 /* formacao */
 .formacao{display:grid;gap:48px;align-items:center}

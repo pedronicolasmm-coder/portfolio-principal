@@ -2,8 +2,8 @@
    Para tirar um trabalho, apague o bloco dele. Para mudar a ordem, mude a posicao do bloco. */
 window.OBRAS = [
  {
-  "id": "pousada-carnaval",
-  "titulo": "Carnaval pra quem quer paz",
+  "id": "pousada-casal",
+  "titulo": "Já pensou em vocês dois aqui?",
   "cliente": "Pousada das Missões",
   "grupo": "pousada",
   "ano": 2026,
@@ -22,11 +22,11 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "mitra-ifood",
-  "titulo": "Você não precisa do iFood",
-  "cliente": "Mitra Digital Solutions",
-  "grupo": "mitra",
-  "ano": 2025,
+  "id": "pousada-quinta",
+  "titulo": "4 motivos para vir de quinta a domingo",
+  "cliente": "Pousada das Missões",
+  "grupo": "pousada",
+  "ano": 2026,
   "tipo": "Carrossel",
   "w": 880,
   "h": 1100
@@ -42,8 +42,28 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "pousada-acorde",
-  "titulo": "Acorde nas Missões",
+  "id": "pousada-uma-noite",
+  "titulo": "Só tem uma noite nas Missões?",
+  "cliente": "Pousada das Missões",
+  "grupo": "pousada",
+  "ano": 2026,
+  "tipo": "Carrossel",
+  "w": 880,
+  "h": 1100
+ },
+ {
+  "id": "eco-grupo",
+  "titulo": "Agenda aberta para bailes",
+  "cliente": "Grupo Eco do Pampa das Missões",
+  "grupo": "outros",
+  "ano": 2026,
+  "tipo": "Post",
+  "w": 880,
+  "h": 1100
+ },
+ {
+  "id": "pousada-manha",
+  "titulo": "Manhã perfeita nas Missões",
   "cliente": "Pousada das Missões",
   "grupo": "pousada",
   "ano": 2026,
@@ -62,43 +82,33 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "eco-grupo",
-  "titulo": "Agenda aberta para bailes",
-  "cliente": "Grupo Eco do Pampa das Missões",
-  "grupo": "outros",
+  "id": "pousada-veio",
+  "titulo": "Veio conhecer o Patrimônio Mundial?",
+  "cliente": "Pousada das Missões",
+  "grupo": "pousada",
   "ano": 2026,
-  "tipo": "Post",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "mitra-netflix",
-  "titulo": "Marketing digital × comunicação estratégica",
-  "cliente": "Mitra Digital Solutions",
-  "grupo": "mitra",
-  "ano": 2025,
   "tipo": "Carrossel",
   "w": 880,
   "h": 1100
  },
  {
-  "id": "pousada-som-luz",
-  "titulo": "Conhece as Ruínas de São Miguel?",
-  "cliente": "Pousada das Missões",
-  "grupo": "pousada",
-  "ano": 2026,
-  "tipo": "Carrossel animado",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "tabua-unicas",
-  "titulo": "Peças únicas",
+  "id": "tabua-personalize",
+  "titulo": "Personalize do seu jeito",
   "cliente": "Tábua Gaúcha",
   "grupo": "tabua",
   "ano": 2025,
   "tipo": "Carrossel",
   "w": 825,
+  "h": 1100
+ },
+ {
+  "id": "pousada-pet",
+  "titulo": "O cachorro vem junto!",
+  "cliente": "Pousada das Missões",
+  "grupo": "pousada",
+  "ano": 2026,
+  "tipo": "Card de carrossel",
+  "w": 880,
   "h": 1100
  },
  {
@@ -112,42 +122,32 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "pousada-agencias",
-  "titulo": "Envia para aquela agência",
+  "id": "pousada-fim-semana",
+  "titulo": "Só tem um final de semana nas Missões?",
   "cliente": "Pousada das Missões",
   "grupo": "pousada",
   "ano": 2026,
-  "tipo": "Carrossel para agências",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "mitra-post-bonito",
-  "titulo": "Post bonito não vende",
-  "cliente": "Mitra Digital Solutions",
-  "grupo": "mitra",
-  "ano": 2025,
   "tipo": "Carrossel",
   "w": 880,
   "h": 1100
  },
  {
-  "id": "skin-kit",
-  "titulo": "Kit de skin care",
-  "cliente": "Loja de skin care",
-  "grupo": "outros",
+  "id": "tabua-sala",
+  "titulo": "A peça que dá vida à sala",
+  "cliente": "Tábua Gaúcha",
+  "grupo": "tabua",
   "ano": 2025,
-  "tipo": "Post de produto",
-  "w": 1080,
-  "h": 1080
+  "tipo": "Carrossel",
+  "w": 825,
+  "h": 1100
  },
  {
-  "id": "pousada-natal",
-  "titulo": "Natal nas Missões",
+  "id": "pousada-vizinho",
+  "titulo": "O Patrimônio é nosso vizinho",
   "cliente": "Pousada das Missões",
   "grupo": "pousada",
-  "ano": 2025,
-  "tipo": "Post de data",
+  "ano": 2026,
+  "tipo": "Card de carrossel",
   "w": 880,
   "h": 1100
  },
@@ -162,6 +162,16 @@ window.OBRAS = [
   "h": 1100
  },
  {
+  "id": "pousada-domingo",
+  "titulo": "Chega no domingo, fica até quarta",
+  "cliente": "Pousada das Missões",
+  "grupo": "pousada",
+  "ano": 2026,
+  "tipo": "Carrossel",
+  "w": 880,
+  "h": 1100
+ },
+ {
   "id": "tabua-churrasco",
   "titulo": "Tábuas para churrasco",
   "cliente": "Tábua Gaúcha",
@@ -169,76 +179,6 @@ window.OBRAS = [
   "ano": 2025,
   "tipo": "Carrossel",
   "w": 825,
-  "h": 1100
- },
- {
-  "id": "colegio-ruinas",
-  "titulo": "O colégio que existiu nas Ruínas",
-  "cliente": "Pousada das Missões",
-  "grupo": "pousada",
-  "ano": 2026,
-  "tipo": "Capa de Reel",
-  "w": 619,
-  "h": 1100
- },
- {
-  "id": "mitra-melhor",
-  "titulo": "Existe uma alternativa melhor?",
-  "cliente": "Mitra Digital Solutions",
-  "grupo": "mitra",
-  "ano": 2025,
-  "tipo": "Carrossel",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "fasa-black",
-  "titulo": "Black Friday com 50% de bolsa",
-  "cliente": "FASA",
-  "grupo": "fasa",
-  "ano": 2024,
-  "tipo": "Anúncio",
-  "w": 621,
-  "h": 1100
- },
- {
-  "id": "pousada-400",
-  "titulo": "400 anos das Missões",
-  "cliente": "Pousada das Missões",
-  "grupo": "pousada",
-  "ano": 2025,
-  "tipo": "Post de data",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "escola-talentos",
-  "titulo": "Jantar show de talentos",
-  "cliente": "Escola Padre Antônio Sepp",
-  "grupo": "outros",
-  "ano": 2024,
-  "tipo": "Post de evento",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "tabua-exclusiva",
-  "titulo": "Essa mesa tem exclusividade",
-  "cliente": "Tábua Gaúcha",
-  "grupo": "tabua",
-  "ano": 2025,
-  "tipo": "Carrossel",
-  "w": 825,
-  "h": 1100
- },
- {
-  "id": "pousada-escola",
-  "titulo": "Traga sua escola",
-  "cliente": "Pousada das Missões",
-  "grupo": "pousada",
-  "ano": 2026,
-  "tipo": "Carrossel para escolas",
-  "w": 880,
   "h": 1100
  },
  {
@@ -252,71 +192,11 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "mitra-site",
-  "titulo": "Um site profissional",
-  "cliente": "Mitra Digital Solutions",
-  "grupo": "mitra",
-  "ano": 2025,
-  "tipo": "Carrossel",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "pousada-pets",
-  "titulo": "Aceita pets? Sim!",
+  "id": "pousada-folga",
+  "titulo": "Tua folga não é no sábado?",
   "cliente": "Pousada das Missões",
   "grupo": "pousada",
   "ano": 2026,
-  "tipo": "Carrossel",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "planti-center",
-  "titulo": "Peças para a sua plantadeira",
-  "cliente": "Planti Center",
-  "grupo": "outros",
-  "ano": 2024,
-  "tipo": "Post de produto",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "fasa-faltam",
-  "titulo": "Faltam 5 dias",
-  "cliente": "FASA Summit",
-  "grupo": "fasa",
-  "ano": 2024,
-  "tipo": "Evento",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "tabua-paises",
-  "titulo": "Já enviamos para mais de 10 países",
-  "cliente": "Tábua Gaúcha",
-  "grupo": "tabua",
-  "ano": 2025,
-  "tipo": "Carrossel",
-  "w": 825,
-  "h": 1100
- },
- {
-  "id": "pousada-paz",
-  "titulo": "Paz & sossego",
-  "cliente": "Pousada das Missões",
-  "grupo": "pousada",
-  "ano": 2026,
-  "tipo": "Post",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "mitra-psicologa",
-  "titulo": "Psicóloga, você precisa ser vista",
-  "cliente": "Mitra Digital Solutions",
-  "grupo": "mitra",
-  "ano": 2025,
   "tipo": "Carrossel",
   "w": 880,
   "h": 1100
@@ -332,18 +212,18 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "fasa-startup",
-  "titulo": "A primeira faculdade startup do Brasil",
+  "id": "fasa-black",
+  "titulo": "Black Friday com 50% de bolsa",
   "cliente": "FASA",
   "grupo": "fasa",
   "ano": 2024,
-  "tipo": "Post",
-  "w": 1080,
-  "h": 1080
+  "tipo": "Anúncio",
+  "w": 621,
+  "h": 1100
  },
  {
-  "id": "pousada-passo",
-  "titulo": "Sentir no passo",
+  "id": "pousada-3-lugares",
+  "titulo": "3 lugares pra foto de família",
   "cliente": "Pousada das Missões",
   "grupo": "pousada",
   "ano": 2026,
@@ -352,12 +232,32 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "colleto",
-  "titulo": "Direitos do réu",
-  "cliente": "Colleto",
-  "grupo": "outros",
+  "id": "tabua-exclusiva",
+  "titulo": "Essa mesa tem exclusividade",
+  "cliente": "Tábua Gaúcha",
+  "grupo": "tabua",
+  "ano": 2025,
+  "tipo": "Carrossel",
+  "w": 825,
+  "h": 1100
+ },
+ {
+  "id": "fasa-faltam",
+  "titulo": "Faltam 5 dias",
+  "cliente": "FASA Summit",
+  "grupo": "fasa",
   "ano": 2024,
-  "tipo": "Post",
+  "tipo": "Evento",
+  "w": 880,
+  "h": 1100
+ },
+ {
+  "id": "pousada-som-luz-noite",
+  "titulo": "Som e Luz",
+  "cliente": "Pousada das Missões",
+  "grupo": "pousada",
+  "ano": 2026,
+  "tipo": "Card de carrossel",
   "w": 880,
   "h": 1100
  },
@@ -372,12 +272,32 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "mitra-investir",
-  "titulo": "Antes de investir pesado",
-  "cliente": "Mitra Digital Solutions",
-  "grupo": "mitra",
-  "ano": 2025,
+  "id": "fasa-startup",
+  "titulo": "A primeira faculdade startup do Brasil",
+  "cliente": "FASA",
+  "grupo": "fasa",
+  "ano": 2024,
+  "tipo": "Post",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "id": "pousada-4-jeitos",
+  "titulo": "4 jeitos de vir pras Missões",
+  "cliente": "Pousada das Missões",
+  "grupo": "pousada",
+  "ano": 2026,
   "tipo": "Carrossel",
+  "w": 880,
+  "h": 1100
+ },
+ {
+  "id": "escola-talentos",
+  "titulo": "Jantar show de talentos",
+  "cliente": "Escola Padre Antônio Sepp",
+  "grupo": "outros",
+  "ano": 2024,
+  "tipo": "Post de evento",
   "w": 880,
   "h": 1100
  },
@@ -392,33 +312,23 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "pousada-monumento",
-  "titulo": "Lugares para conhecer",
+  "id": "pousada-ceu-aberto",
+  "titulo": "História a céu aberto",
   "cliente": "Pousada das Missões",
   "grupo": "pousada",
   "ano": 2026,
-  "tipo": "Carrossel",
+  "tipo": "Card de carrossel",
   "w": 880,
   "h": 1100
  },
  {
-  "id": "skin-facial",
-  "titulo": "Kit cuidados faciais",
-  "cliente": "Loja de skin care",
-  "grupo": "outros",
+  "id": "tabua-unicas",
+  "titulo": "Peças únicas",
+  "cliente": "Tábua Gaúcha",
+  "grupo": "tabua",
   "ano": 2025,
-  "tipo": "Post de produto",
-  "w": 1080,
-  "h": 1080
- },
- {
-  "id": "escola-servidor",
-  "titulo": "Dia do Servidor Público",
-  "cliente": "Escola Padre Antônio Sepp",
-  "grupo": "outros",
-  "ano": 2024,
-  "tipo": "Post de data",
-  "w": 880,
+  "tipo": "Carrossel",
+  "w": 825,
   "h": 1100
  },
  {
@@ -432,33 +342,23 @@ window.OBRAS = [
   "h": 1100
  },
  {
-  "id": "mitra-robo",
-  "titulo": "Seu robô assistente",
-  "cliente": "Mitra Digital Solutions",
-  "grupo": "mitra",
-  "ano": 2025,
-  "tipo": "Carrossel",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "pousada-cultural",
-  "titulo": "Qual seu tipo de turista?",
-  "cliente": "Pousada das Missões",
-  "grupo": "pousada",
-  "ano": 2026,
-  "tipo": "Carrossel",
-  "w": 880,
-  "h": 1100
- },
- {
-  "id": "sete-povos",
-  "titulo": "Caçamba raspo Scraper",
-  "cliente": "Agrícola Sete Povos",
+  "id": "colleto",
+  "titulo": "Direitos do réu",
+  "cliente": "Colleto",
   "grupo": "outros",
   "ano": 2024,
-  "tipo": "Story de produto",
-  "w": 619,
+  "tipo": "Post",
+  "w": 880,
+  "h": 1100
+ },
+ {
+  "id": "escola-servidor",
+  "titulo": "Dia do Servidor Público",
+  "cliente": "Escola Padre Antônio Sepp",
+  "grupo": "outros",
+  "ano": 2024,
+  "tipo": "Post de data",
+  "w": 880,
   "h": 1100
  },
  {
@@ -475,6 +375,14 @@ window.OBRAS = [
 
 /* Carrosseis completos (prancheta com todos os slides lado a lado) */
 window.PANORAMAS = [
+ {
+  "id": "pousada-casal-completo",
+  "titulo": "Carrossel Já pensou em vocês dois aqui?",
+  "cliente": "Pousada das Missões",
+  "ano": 2026,
+  "w": 2400,
+  "h": 500
+ },
  {
   "id": "anima-3",
   "titulo": "Carrossel Anima Missões",

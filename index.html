@@ -21,8 +21,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=1">
-<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="estilo.css?v=2">
+<script>
+document.documentElement.classList.add("js");
+/* sempre abre no topo: o navegador nao volta para onde parou nem pula para um #link */
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+</script>
 </head>
 <body>
 
@@ -50,6 +55,7 @@
       <a href="#resultados">Resultados</a>
       <a href="#trabalhos">Trabalhos</a>
       <a href="#sites">Sites</a>
+      <a href="#sobre">Sobre mim</a>
       <a href="#formacao">Formação</a>
     </nav>
     <a class="bt bt-preto bt-topo" target="_blank" rel="noopener"
@@ -88,9 +94,9 @@
     </div>
 
     <div class="mural" aria-hidden="true">
-      <img class="m1" src="img/t/pousada-carnaval.jpg" width="640" height="800" alt="">
+      <img class="m1" src="img/t/pousada-casal.jpg" width="640" height="800" alt="">
       <img class="m2" src="img/t/fasa-vem-ser.jpg" width="640" height="800" alt="">
-      <img class="m3" src="img/t/mitra-ifood.jpg" width="640" height="800" alt="">
+      <img class="m3" src="img/t/pousada-quinta.jpg" width="640" height="800" alt="">
       <img class="m4" src="img/t/tabua-churrasco.jpg" width="600" height="800" alt="">
       <img class="m5" src="img/t/eco-grupo.jpg" width="640" height="800" alt="">
       <span class="etq e1">Pousada das Missões</span>
@@ -111,12 +117,12 @@
   <div class="faixa-clientes" aria-label="Marcas atendidas">
     <div class="rolo">
       <ul>
-        <li>Pousada das Missões</li><li>FASA</li><li>Tábua Gaúcha</li><li>Mitra Digital Solutions</li>
+        <li>Pousada das Missões</li><li>FASA</li><li>Tábua Gaúcha</li>
         <li>Grupo Eco do Pampa das Missões</li><li>Anima Missões</li><li>Voluma</li><li>Escola Padre Antônio Sepp</li>
         <li>Planti Center</li><li>Colleto</li><li>Agrícola Sete Povos</li>
       </ul>
       <ul aria-hidden="true">
-        <li>Pousada das Missões</li><li>FASA</li><li>Tábua Gaúcha</li><li>Mitra Digital Solutions</li>
+        <li>Pousada das Missões</li><li>FASA</li><li>Tábua Gaúcha</li>
         <li>Grupo Eco do Pampa das Missões</li><li>Anima Missões</li><li>Voluma</li><li>Escola Padre Antônio Sepp</li>
         <li>Planti Center</li><li>Colleto</li><li>Agrícola Sete Povos</li>
       </ul>
@@ -223,9 +229,6 @@
       <figure class="revela"><img src="img/res/unesco.jpg" width="640" height="800" loading="lazy" alt="Reel com as Ruínas de São Miguel, Patrimônio Mundial da Unesco."><figcaption><b>199 mil</b> visualizações · Reel</figcaption></figure>
       <figure class="revela"><img src="img/res/sao-miguel-por-cima.jpg" width="640" height="800" loading="lazy" alt="Reel com imagem aérea: São Miguel por cima, ruínas e pousada lado a lado."><figcaption><b>117 mil</b> visualizações · Reel</figcaption></figure>
       <figure class="revela"><img src="img/res/cruz.jpg" width="640" height="800" loading="lazy" alt="Reel ao lado da cruz missioneira."><figcaption><b>55,2 mil</b> visualizações · Reel</figcaption></figure>
-      <figure class="revela"><img src="img/res/7-lugares.jpg" width="640" height="800" loading="lazy" alt="Capa de carrossel: 7 lugares nas Missões pra conhecer com calma."><figcaption><b>26,5 mil</b> visualizações · Carrossel</figcaption></figure>
-      <figure class="revela"><img src="img/res/3-lugares.jpg" width="640" height="800" loading="lazy" alt="Capa de carrossel: 3 lugares que quase ninguém visita."><figcaption><b>4,8 mil</b> visualizações · Carrossel</figcaption></figure>
-      <figure class="revela"><img src="img/res/3-dias.jpg" width="640" height="800" loading="lazy" alt="Capa de carrossel: 3 dias nas Missões."><figcaption><b>2,7 mil</b> visualizações · Carrossel</figcaption></figure>
     </div>
 
     <div class="res-bloco res-ads">
@@ -268,16 +271,16 @@
           <p>De julho a dezembro criei as peças da FASA, faculdade do noroeste do RS: campanhas de vestibular, cursos de extensão, o FASA Summit e a cobertura das visitas a 19 escolas da região. No mesmo ano vieram os primeiros clientes do comércio e do agro.</p>
           <p class="clientes">FASA · Escola Padre Antônio Sepp · Planti Center · Colleto · Agrícola Sete Povos</p>
         </div>
-        <div class="ano-fotos" data-ids="fasa-vem-ser,fasa-summit,escola-talentos,planti-center"></div>
+        <div class="ano-fotos" data-ids="fasa-vem-ser,fasa-summit,fasa-agro,escola-talentos"></div>
       </li>
       <li class="ano revela">
         <div class="ano-num">2025</div>
         <div class="ano-txt">
           <h3>Conteúdo feito para vender</h3>
-          <p>Carrosséis para profissionais liberais e comércio com a Mitra Digital Solutions, as mesas e lareiras sob encomenda da Tábua Gaúcha e posts de produto para loja de skin care. No meio do ano assumi o Instagram da Pousada das Missões.</p>
-          <p class="clientes">Mitra Digital Solutions · Tábua Gaúcha · Loja de skin care · Pousada das Missões</p>
+          <p>Carrosséis da Tábua Gaúcha, que faz mesas, lareiras e tábuas de madeira sob encomenda, cada peça única. No meio do ano assumi o Instagram da Pousada das Missões, que virou meu principal cliente.</p>
+          <p class="clientes">Tábua Gaúcha · Pousada das Missões</p>
         </div>
-        <div class="ano-fotos" data-ids="mitra-post-bonito,tabua-exclusiva,skin-kit,pousada-natal"></div>
+        <div class="ano-fotos" data-ids="tabua-inverno,tabua-personalize,tabua-sala,tabua-exclusiva"></div>
       </li>
       <li class="ano revela">
         <div class="ano-num">2026</div>
@@ -286,7 +289,7 @@
           <p>A Pousada das Missões passou de meio milhão de visualizações em 90 dias e de mil conversas pelos anúncios. Programei o site de roteiros da pousada, o site do Grupo Eco do Pampa das Missões e a landing page do Voluma, e entraram novos clientes.</p>
           <p class="clientes">Pousada das Missões · Grupo Eco do Pampa das Missões · Anima Missões · Voluma</p>
         </div>
-        <div class="ano-fotos" data-ids="pousada-carnaval,pousada-agencias,eco-grupo,colegio-ruinas"></div>
+        <div class="ano-fotos" data-ids="pousada-casal,pousada-uma-noite,eco-grupo,pousada-quinta"></div>
       </li>
     </ol>
   </div>
@@ -305,7 +308,6 @@
         <button type="button" data-f="pousada" aria-pressed="false">Pousada das Missões</button>
         <button type="button" data-f="fasa" aria-pressed="false">FASA</button>
         <button type="button" data-f="tabua" aria-pressed="false">Tábua Gaúcha</button>
-        <button type="button" data-f="mitra" aria-pressed="false">Mitra</button>
         <button type="button" data-f="outros" aria-pressed="false">Outros clientes</button>
       </div>
     </div>
@@ -314,7 +316,7 @@
 
     <div class="pano-cab">
       <h3 class="sub">Carrosséis completos <span class="periodo">arraste para o lado</span></h3>
-      <p>Carrossel pensado como uma peça só: a imagem passa de um slide para o outro.</p>
+      <p>Carrossel pensado como uma peça só, do primeiro ao último slide.</p>
     </div>
     <div class="panoramas" id="panoramas"></div>
   </div>
@@ -403,6 +405,30 @@
           <a class="mais" href="https://pedronicolasmm-coder.github.io/portfolio-fasa/" target="_blank" rel="noopener">Ver página<svg class="ic" aria-hidden="true"><use href="#i-seta"/></svg></a>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE MIM ============ -->
+<section class="sec sec-papel2" id="sobre">
+  <div class="env sobre">
+    <!-- Para usar uma foto: salve como img/pedro.jpg (vertical, 4:5) e troque o <div class="foto-pedro"> abaixo por:
+         <img class="foto-pedro revela" src="img/pedro.jpg" width="800" height="1000" alt="Pedro Munareto"> -->
+    <div class="foto-pedro revela" role="img" aria-label="Pedro Munareto">
+      <span class="fp-pm" aria-hidden="true">PM</span>
+      <span class="fp-local">São Miguel das Missões · RS</span>
+    </div>
+    <div class="sobre-txt revela">
+      <p class="rotulo">// sobre mim</p>
+      <h2>Prazer, <em>Pedro Munareto.</em></h2>
+      <p>Sou social media, gestor de tráfego e crio landing pages. Moro em São Miguel das Missões, no noroeste do RS, e cuido do marketing de empresas e instituições daqui e de fora.</p>
+      <p>Comecei em 2024, com seis meses de campanhas na FASA. Hoje cuido do Instagram e dos anúncios da Pousada das Missões e programo os sites dos meus clientes. Ao mesmo tempo, curso <b>Ciência da Computação na URI</b>.</p>
+      <p class="sobre-forte">Você não tem trabalho nenhum: do planejamento ao relatório, fica tudo comigo.</p>
+      <ul class="sobre-lista" aria-label="O que eu faço">
+        <li>Gestão completa do Instagram</li><li>Calendário editorial</li><li>Posts, carrosséis e stories</li>
+        <li>Edição de vídeos e Reels</li><li>Direção de arte e design</li><li>Legendas e textos</li>
+        <li>Publicação e agendamento</li><li>Tráfego pago</li><li>Relatório de resultados</li><li>Sites e landing pages</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -506,7 +532,7 @@
   <button class="lupa-seta prox" id="lupa-prox" type="button" aria-label="Próximo">&#8250;</button>
 </div>
 
-<script src="dados.js?v=1"></script>
-<script src="app.js?v=1"></script>
+<script src="dados.js?v=2"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>
