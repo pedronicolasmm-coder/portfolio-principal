@@ -1,87 +1,80 @@
-/* Portfolio principal · monta a galeria a partir de dados.js e cuida do visualizador */
+/* Portfolio principal · monta feeds, grades e celulares a partir de dados.js e cuida do visualizador */
 (function () {
   var OBRAS = window.OBRAS || [], PANOS = window.PANORAMAS || [];
   var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (t) {
     return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; });
   };
-  var porId = {};
-  OBRAS.forEach(function (o) { porId[o.id] = o; });
+  var doGrupo = function (g) { return OBRAS.filter(function (o) { return o.grupo === g; }); };
 
-  /* ---------- galeria ---------- */
-  var galeria = $("#galeria");
-  OBRAS.forEach(function (o, i) {
+  function botao(o, lista, i, extra) {
     var b = document.createElement("button");
     b.type = "button";
-    b.className = "obra";
-    b.dataset.grupo = o.grupo;
-    b.dataset.i = i;
+    if (extra) b.className = extra;
     b.setAttribute("aria-label", "Ampliar: " + o.titulo + ", " + o.cliente);
-    b.innerHTML =
-      '<span class="quadro"><img src="img/t/' + o.id + '.jpg" width="' + o.w + '" height="' + o.h +
-      '" loading="lazy" decoding="async" alt="' + esc(o.titulo) + '"></span>' +
-      '<span class="leg"><b>' + esc(o.titulo) + "</b><span>" + esc(o.cliente) + " · " + o.ano + " · " + esc(o.tipo) + "</span></span>";
-    galeria.appendChild(b);
-  });
-
-  var visiveis = OBRAS.slice(), filtro = "todos", tudo = false, LIMITE = 16;
-  var verMais = $("#ver-mais");
-  verMais.textContent = "Ver todos os " + OBRAS.length + " trabalhos";
-  function aplicar() {
-    visiveis = OBRAS.filter(function (o) { return filtro === "todos" || o.grupo === filtro; });
-    var n = 0;
-    galeria.querySelectorAll(".obra").forEach(function (b) {
-      var ok = filtro === "todos" || b.dataset.grupo === filtro;
-      if (ok) n++;
-      b.classList.toggle("some", !ok || (filtro === "todos" && !tudo && n > LIMITE));
-    });
-    verMais.parentNode.hidden = filtro !== "todos" || tudo;
+    b.innerHTML = '<img src="img/t/' + o.id + '.jpg" width="' + o.w + '" height="' + o.h + '" loading="lazy" decoding="async" alt="' + esc(o.titulo) + '">';
+    b.addEventListener("click", function () { abrir(lista, i); });
+    return b;
   }
-  verMais.addEventListener("click", function () { tudo = true; aplicar(); });
-  aplicar();
-  galeria.addEventListener("click", function (e) {
-    var b = e.target.closest(".obra");
-    if (!b) return;
-    var o = OBRAS[+b.dataset.i];
-    abrir(visiveis, visiveis.indexOf(o));
+
+  /* feed 3x3 ao lado do texto */
+  $$(".feed9").forEach(function (caixa) {
+    var lista = doGrupo(caixa.dataset.grupo);
+    lista.slice(0, 9).forEach(function (o, i) { caixa.appendChild(botao(o, lista, i)); });
   });
 
-  /* filtros */
-  var filtros = document.querySelectorAll(".filtros button");
-  filtros.forEach(function (f) {
-    f.addEventListener("click", function () {
-      filtro = f.dataset.f;
-      filtros.forEach(function (x) { var on = x === f; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
-      aplicar();
-    });
+  /* grade larga, de 5 em 5 (no celular, de 3 em 3: o que sobra fica so no computador) */
+  $$(".grade").forEach(function (caixa) {
+    var lista = doGrupo(caixa.dataset.grupo);
+    var cabe3 = Math.floor(lista.length / 3) * 3;
+    lista.forEach(function (o, i) { caixa.appendChild(botao(o, lista, i, i >= cabe3 ? "so-desk" : "")); });
   });
 
-  /* carrosseis completos */
-  var panos = $("#panoramas");
-  PANOS.forEach(function (p) {
-    var f = document.createElement("figure");
-    f.className = "pano";
-    f.innerHTML = '<img src="img/obras/' + p.id + '.jpg" width="' + p.w + '" height="' + p.h +
-      '" loading="lazy" decoding="async" alt="' + esc(p.titulo) + ', todos os slides lado a lado">' +
-      "<figcaption>" + esc(p.cliente) + " · " + p.ano + " · carrossel completo</figcaption>";
-    panos.appendChild(f);
-  });
-
-  /* miniaturas da trajetoria */
-  document.querySelectorAll(".ano-fotos").forEach(function (caixa) {
-    var lista = caixa.dataset.ids.split(",").map(function (id) { return porId[id]; }).filter(Boolean);
+  /* duas artes soltas (Eco do Pampa) */
+  $$(".eco-artes").forEach(function (caixa) {
+    var lista = doGrupo(caixa.dataset.grupo);
     lista.forEach(function (o, i) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.setAttribute("aria-label", "Ampliar: " + o.titulo + ", " + o.cliente);
-      b.innerHTML = '<img src="img/t/' + o.id + '.jpg" loading="lazy" decoding="async" alt="' + esc(o.titulo) + '">';
-      b.addEventListener("click", function () { abrir(lista, i); });
+      var b = botao(o, lista, i);
+      b.querySelector("img").removeAttribute("loading");
       caixa.appendChild(b);
     });
   });
 
+  /* celular com o perfil */
+  $$(".cel").forEach(function (cel) {
+    var lista = doGrupo(cel.dataset.grupo).slice(0, 9);
+    if (!lista.length) return;
+    var grade = lista.map(function (o) { return '<img src="img/t/' + o.id + '.jpg" loading="lazy" decoding="async" alt="">'; }).join("");
+    cel.setAttribute("role", "img");
+    cel.setAttribute("aria-label", "Perfil @" + cel.dataset.user + " no celular, com as artes do feed");
+    cel.innerHTML =
+      '<div class="cel-tela"><span class="cel-ilha"></span>' +
+      '<div class="cel-status"><span>9:41</span><span>●●●</span></div>' +
+      '<div class="cel-user">' + esc(cel.dataset.user) + "</div>" +
+      '<div class="cel-perfil"><img src="img/t/' + lista[0].id + '.jpg" alt=""><div><b>' + esc(cel.dataset.nome) +
+      "</b><span>feed criado por Pedro Munareto</span></div></div>" +
+      '<div class="cel-bts"><span>Seguindo</span><span>Mensagem</span></div>' +
+      '<div class="cel-grade">' + grade + "</div></div>";
+  });
+
+  /* carrosseis completos */
+  var porPano = {};
+  PANOS.forEach(function (p) { porPano[p.id] = p; });
+  $$(".panos").forEach(function (caixa) {
+    caixa.dataset.ids.split(",").forEach(function (id) {
+      var p = porPano[id];
+      if (!p) return;
+      var f = document.createElement("figure");
+      f.className = "pano";
+      f.innerHTML = '<img src="img/obras/' + p.id + '.jpg" width="' + p.w + '" height="' + p.h + '" loading="lazy" decoding="async" alt="' +
+        esc(p.titulo) + ', todos os slides lado a lado">' + "<figcaption>" + esc(p.cliente) + " · " + p.ano + " · carrossel completo, arraste para o lado</figcaption>";
+      caixa.appendChild(f);
+    });
+  });
+
   /* prints de resultado */
-  document.querySelectorAll("[data-zoom]").forEach(function (b) {
+  $$("[data-zoom]").forEach(function (b) {
     b.addEventListener("click", function () {
       abrir([{ src: b.dataset.zoom, titulo: b.dataset.leg, cliente: "Pousada das Missões", ano: 2026, tipo: "Print de resultado" }], 0);
     });
@@ -162,20 +155,21 @@
     var obs = new IntersectionObserver(function (ents) {
       ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visto"); obs.unobserve(en.target); } });
     }, { rootMargin: "0px 0px -8% 0px", threshold: .06 });
-    document.querySelectorAll(".revela").forEach(function (el) { obs.observe(el); });
+    $$(".revela").forEach(function (el) { obs.observe(el); });
 
     var links = {};
-    menu.querySelectorAll("a").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
+    $$("a", menu).forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
+    var secs = { sobre: "sobre", projetos: "projetos", pousada: "projetos", fasa: "projetos", tabua: "projetos", eco: "projetos",
+      anima: "projetos", resultados: "resultados", sites: "sites", processo: "sites", contato: "contato" };
     var obsSec = new IntersectionObserver(function (ents) {
       ents.forEach(function (en) {
         if (!en.isIntersecting) return;
-        Object.keys(links).forEach(function (k) { links[k].classList.toggle("ativo", k === en.target.id); });
+        var alvo = secs[en.target.id];
+        Object.keys(links).forEach(function (k) { links[k].classList.toggle("ativo", k === alvo); });
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    ["inicio", "servicos", "resultados", "trajetoria", "trabalhos", "sites", "sobre", "formacao", "processo", "contato"].forEach(function (id) {
-      var s = document.getElementById(id); if (s) obsSec.observe(s);
-    });
+    Object.keys(secs).forEach(function (id) { var s = document.getElementById(id); if (s) obsSec.observe(s); });
   } else {
-    document.querySelectorAll(".revela").forEach(function (el) { el.classList.add("visto"); });
+    $$(".revela").forEach(function (el) { el.classList.add("visto"); });
   }
 })();
